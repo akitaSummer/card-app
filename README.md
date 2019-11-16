@@ -1,4 +1,4 @@
-# limni-to-find
+# card-app
 
 ## Project setup
 ```

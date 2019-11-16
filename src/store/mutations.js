@@ -24,5 +24,11 @@ export default {
   selectCard(state, selected) {
     state.unselect = null
     state.selected = selected
+  },
+  toggleCard(state, { card }) {
+    if (state.selected && state.selected.card === card) {
+      return
+    }
+    card.active = !card.active
   }
 }

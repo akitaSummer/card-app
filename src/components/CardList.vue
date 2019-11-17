@@ -19,7 +19,7 @@
     computed: {
       ...mapState(['cards', 'selected', 'currentIndex'])
     },
-    methons: {
+    methods: {
       ...mapMutations(['prevCard', 'nextCard', 'selectCard'])
     }
   }

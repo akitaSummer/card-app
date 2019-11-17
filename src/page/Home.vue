@@ -3,6 +3,7 @@
     <app-bar title="INTEREST" left="search" right="crosshairs"></app-bar>
     <tab-list></tab-list>
     <card-list></card-list>
+    <card-detail></card-detail>
   </div>
 </template>
 
@@ -10,12 +11,14 @@
   import AppBar from '../components/AppBar'
   import TabList from '../components/TabList'
   import CardList from '../components/CardList'
+  import CardDetail from '../components/CardDetail'
   export default {
     name: "Home",
     components: {
       AppBar,
       TabList,
-      CardList
+      CardList,
+      CardDetail
     }
   }
 </script>

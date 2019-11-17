@@ -1,16 +1,19 @@
 <template>
   <div class="card" :class="{ card__active: card.active, card__selected: selected }">
-    <card-front :card="card" @click.native="toggleCard({ Card })"></card-front>
+    <card-front :card="card" @click.native="toggleCard({ card })"></card-front>
+    <card-back :card="card" @click.native="handleClick"></card-back>
   </div>
 </template>
 
 <script>
   import { mapMutations } from 'vuex'
   import CardFront from './CardFront'
+  import CardBack from './CardBack'
   export default {
     name: "Card",
     components: {
-      CardFront
+      CardFront,
+      CardBack
     },
     props: {
       card: {
@@ -52,7 +55,7 @@
     visibility: hidden;
   }
   .card__active {
-    .card_bact {
+    .card_back {
       transform: scale(1);
       opacity: 1;
     }

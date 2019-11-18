@@ -93,6 +93,7 @@
     }
     .post-list {
       transform: scale3d(1, 1, 1);
+      opacity: 1;
     }
     .post {
       padding: 16px 30px;

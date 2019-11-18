@@ -6,7 +6,7 @@ export default {
     state.cards.forEach(card => {
       card.active = false
     })
-    if (state.currentIndex < state.todos.length - 1) {
+    if (state.currentIndex < state.cards.length - 1) {
       state.currentIndex++
     }
   },
@@ -30,5 +30,9 @@ export default {
       return
     }
     card.active = !card.active
+  },
+  unselectCard (state) {
+    state.unselect = state.selected
+    state.selected = null
   }
 }

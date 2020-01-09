@@ -3,7 +3,6 @@
     <div class="post" v-for="post in posts" :key="post.id">
       <div class="post_avatar">
         <span class="post_face" :style="{ backgroundImage: `url(${post.faceUrl})` }">
-
         </span>
         <span class="post_name">{{ post.name }}</span>
         <span class="post_date">{{ post.date | dateString }}</span>
@@ -41,6 +40,7 @@
   }
   .post_face {
     display: block;
+    box-sizing: content-box;
     height: 50px;
     border-radius: 100%;
     background-size: cover;

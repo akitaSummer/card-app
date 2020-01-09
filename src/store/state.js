@@ -12,7 +12,7 @@ export default {
       address: 'La Crescenta-Montrose, CA91020 Glendale',
       postcode: 'NO. 7911847',
       star: 4,
-      posts: [
+      posts: [ // 评论
         {
           id: 3,
           name: 'Amada Lin',

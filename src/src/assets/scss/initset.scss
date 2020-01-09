@@ -1,0 +1,249 @@
+@import './variables.scss';
+// initset
+*{
+  box-sizing: border-box;
+  outline: none;
+}
+html{
+  font-size: 13px;
+  body{
+    margin: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    line-height: 1.2em;
+    background: #F1F1F1;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+a {
+  color: #999;
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+@each $colorKey, $color in $colors{
+  .text-#{$colorKey}{
+    color: $color;
+  }
+  .bg-#{$colorKey}{
+    background: $color;
+  }
+}
+
+// text oveflow
+.text-ellipsis{
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// text align
+@each $var in (left, center, right){
+  .text-#{$var}{
+    text-align: $var;
+  }
+}
+
+
+@each $sizeKey, $size in $font-sizes{
+  .fs-#{$sizeKey}{
+    font-size: $size * $base-font-size;
+  }
+}
+
+// flex
+.d-flex{
+  display: flex;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+@each $key, $value in $flex-jc{
+  .jc-#{$key}{
+    justify-content: $value;
+  }
+}
+
+@each $key, $value in $flex-jc{
+  .ai-#{$key}{
+    align-items: $value;
+  }
+}
+.flex-1{
+  flex: 1;
+}
+.flex-grow-1{
+  flex-grow: 1;
+}
+
+
+@each $typeKey, $type in $spacing-types {
+  // .m-1
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}-#{$sizeKey} {
+      #{$type}: $size * $spacing-base-size;
+    }
+  }
+
+  // .mx-1
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}x-#{$sizeKey} {
+      #{$type}-left: $size * $spacing-base-size;
+      #{$type}-right: $size * $spacing-base-size;
+    }
+    // .my-1
+    .#{$typeKey}y-#{$sizeKey} {
+      #{$type}-top: $size * $spacing-base-size;
+      #{$type}-bottom: $size * $spacing-base-size;
+    }
+  }
+
+  // .mt-1 {}
+  @each $directionKey, $direction in $spacing-directions {
+    @each $sizeKey, $size in $spacing-sizes {
+      .#{$typeKey}#{$directionKey}-#{$sizeKey} {
+        #{$type}-#{$direction}: $size * $spacing-base-size;
+      }
+    }
+  }
+}
+
+// button
+.btn{
+  border: none;
+  border-radius: 0.1538rem;
+  font-size: map-get($font-sizes, 'sm') * $base-font-size;
+  padding: 0.2rem 0.6rem;
+  &.btn-lg{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    i{
+      color: map_get($colors, 'primary');
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+    background: map_get($colors, 'white-1');
+    border: 1px solid map_get($colors, 'white-2');
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+// nav
+.nav{
+  display: flex;
+  .nav-item{
+    border-bottom: 3px solid transparent;
+    padding-bottom: 0.2rem;
+    &.active{
+      color: map_get($colors, 'primary');
+      border-bottom: 3px solid map_get($colors, 'primary');
+    }
+  }
+  &.nav-inverse{
+    .nav-item{
+      color: map_get($colors, 'white');
+      &.active{
+        border-bottom: 3px solid map_get($colors, 'white');
+      }
+    }
+  }
+}
+
+// width: 100%
+.w-100{
+  width: 100%;
+}
+// height: 100%
+.h-100{
+  height: 100%;
+}
+
+// sprite
+.sprite{
+  background: url(../image/index.png) no-repeat 0 0;
+  background-size: 28.8462rem;
+  display: inline-block;
+  &.sprite-news{
+    width: 23px;
+    height: 20px;
+    background-position: 63.546% 15.517%;
+  }
+  &.sprite-stories{
+    width: 23px;
+    height: 20px;
+    background-position: 90.483% 15.614%;
+  }
+  &.sprite-shop{
+    width: 19px;
+    height: 22px;
+    background-position: 36.746% 0.924%;
+  }
+  &.sprite-feel{
+    width: 20px;
+    height: 20px;
+    background-position: 10.408% 15.517%;
+  }
+  &.sprite-rookie{
+    width: 20px;
+    height: 21px;
+    background-position: 89.733% 1.266%;
+  }
+  &.sprite-honour{
+    width: 24px;
+    height: 20px;
+    background-position: 36.467% 15.287%;
+  }
+  &.sprite-community{
+    width: 26px;
+    height: 21px;
+    background-position: 9.728% 1.266%;
+  }
+  &.sprite-camp{
+    width: 24px;
+    height: 24px;
+    background-position: 63.3% 0.927%;
+  }
+  &.sprite-wechat{
+    width: 24px;
+    height: 20px;
+    background-position: 0 96.207%;
+  }
+  &.sprite-edition{
+    width: 23px;
+    height: 20px;
+    background-position: 90.483% 15.614%;
+  }
+  &.sprite-arrow{
+    width: 10px;
+    height: 10px;
+    background-position: 38.577% 52.076%;
+  }
+  &.sprite-open{
+    width: 10px;
+    height: 10px;
+    background-position: 38.577% 52.076%;
+    transform: rotate(180deg);
+  }
+  &.sprite-play{
+    background-size: 375px 455px;
+    width: 13px;
+    height: 11px;
+    background-position: 0.138% 56.532%;
+  }
+}
+
+// borders
+@each $dir in (top, right, bottom, left){
+  .border-#{$dir}{
+    border-#{$dir}: 1px solid $border-color;
+  }
+}
